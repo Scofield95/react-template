@@ -1,0 +1,18 @@
+@mixin posi-msg ($id, $cs, $ce, $rs, $re, $bg)
+  .g-#{$id}
+    grid-column-start: $cs
+    grid-column-end: $ce
+    grid-row-start: $rs
+    grid-row-end: $re
+    background: $bg
+  
+.g-container
+  width: '100%'
+  height: 100%
+  display: grid
+  grid-template-columns: 200px 1fr
+  grid-template-rows: 60px 1fr 60px
+  @each $id, $cs, $ce, $rs, $re, $bg in (header, 2, 3, 1, 2, #f00),
+  (aside, 1, 2, 1, 4, #999),(view, 2, 3, 2, 3, balck),(footer, 2, 3, 3, 4, green)
+    @include posi-msg ($id, $cs, $ce, $rs, $re, $bg)
+
