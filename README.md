@@ -2,6 +2,7 @@
 ## 本次学习采用的技术
 react react-router mock sass
 ## 配置ant design 按需加载
+1.npm install react-app-rewired --save-dev
 
 ## 配置sass 
 需要安装'css-loader', 'sass-loader'
