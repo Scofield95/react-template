@@ -1,50 +1,7 @@
 import React from 'react';
 import './Layout.sass';
 import Sidebar from '../components/Sidebar'
-const menuData = [
-  {
-    submenu: '首页',
-    icon: 'appstore',
-    child: [
-      {
-        url: '',
-        item: '',
-        icon: 'appstore'
-      }
-    ]
-  },
-  {
-    submenu: '钱包',
-    icon: 'mail',
-    child: [
-      {
-        url: 'wallet',
-        item: '',
-        icon: 'mail'
-      }
-    ]
-  },
-  {
-    submenu: '站点',
-    icon: 'setting',
-    child: [
-      {
-        url: 'site',
-        item: '',
-        icon: 'setting'
-      }
-    ]
-  },
-  {
-    submenu: '我的订单',
-    icon: 'setting',
-    child: {
-      url: 'asdfsadf',
-      item: '',
-      icon: 'setting'
-    }
-  }
-]
+import menuData from '../mockData/menu.js'
 function Layout () {
   return(
     <div className='g-container'>
