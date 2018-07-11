@@ -12,5 +12,7 @@ exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/, /\.sass$/],
   test: /\.sass$/,
   loaders: ['style-loader', 'css-loader', 'sass-loader'],
 }
+## 2018/7/10
+安装了react-redux
 
 

@@ -3,21 +3,40 @@ import { Menu, Icon } from 'antd';
 
 
 const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
+// const MenuItemGroup = Menu.ItemGroup;
 
 class Sidebar extends React.Component {
   handleClick = (e) => {
     console.log('click ', e);
   }
 
+  MenuItems(){
+    
+    return  this.props.menuData.map((item,index) =>
+      {
+      if(item.child){
+        return <SubMenu key={index.toString()} 
+                        title={<span><Icon type={item.icon} style={{ fontSize: 16, color: '#08c' }} /><span>{item.submenu}</span></span>}>
+                {
+                  item.child.map((son)=>
+                    <Menu.Item key={son.submenu}>{son.url}</Menu.Item>
+                  )
+                }
+              </SubMenu>
+      }
+      return <Menu.Item key={item.url}><Icon type={item.icon} style={{ fontSize: 16, color: '#08c' }} />{item.submenu}</Menu.Item>
+    })
+  }
   render() {
+    console.log(this.props)
     return (
       <Menu
         onClick={this.handleClick}
-        style={{ width: 200 }}
+        style={{ width: 220 }}
         defaultSelectedKeys={['1']}
         defaultOpenKeys={['sub1']}
         mode="inline"
+<<<<<<< HEAD
         theme="dark"
       >
         <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
@@ -44,11 +63,14 @@ class Sidebar extends React.Component {
           <Menu.Item key="11">Option 11</Menu.Item>
         </SubMenu>
         <Menu.Item key="12">Option 12</Menu.Item>
+=======
+        theme='dark'
+      >
+      {this.MenuItems()}
+>>>>>>> 59529e311f9b400ca91d20eb3ad83724165ab738
       </Menu>
     );
   }
 }
-
-
 
 export default Sidebar
