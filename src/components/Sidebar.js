@@ -18,6 +18,7 @@ class Sidebar extends React.Component {
         defaultSelectedKeys={['1']}
         defaultOpenKeys={['sub1']}
         mode="inline"
+        theme="dark"
       >
         <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
           <MenuItemGroup key="g1" title="Item 1">
@@ -41,8 +42,8 @@ class Sidebar extends React.Component {
           <Menu.Item key="9">Option 9</Menu.Item>
           <Menu.Item key="10">Option 10</Menu.Item>
           <Menu.Item key="11">Option 11</Menu.Item>
-          <Menu.Item key="12">Option 12</Menu.Item>
         </SubMenu>
+        <Menu.Item key="12">Option 12</Menu.Item>
       </Menu>
     );
   }
